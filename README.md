@@ -2,6 +2,8 @@
 
 <p align="center"><strong>Chat • Giọng nói • Dự án • Lập trình • Học Anh–Nhật</strong><br/>Windows desktop · Electron · React · FastAPI · SQLite · Ollama</p>
 
+<p align="center"><a href="https://github.com/blueDstar/D-Assistant-Desktop/actions/workflows/ci.yml"><img src="https://github.com/blueDstar/D-Assistant-Desktop/actions/workflows/ci.yml/badge.svg?branch=main" alt="Trạng thái CI thực tế trên nhánh main" /></a></p>
+
 <p align="center"><a href="#cài-đặt-và-mở-ứng-dụng">Bắt đầu</a> · <a href="#sử-dụng-hằng-ngày">Cách dùng</a> · <a href="#hạn-chế-cần-biết">Hạn chế</a> · <a href="docs/ROADMAP.md">Hướng nâng cấp</a></p>
 
 # D-bot Assistant Desktop
@@ -106,6 +108,8 @@ Tùy chọn tạo shortcut bằng `scripts/install-desktop-shortcut.ps1`. Nếu 
 Kiểm tra bản nguồn xuất bản ngày 02/11/2026: **94 backend passed / 1 skipped**, **18 frontend passed**, **18 desktop passed**; TypeScript và production build qua. Backend dùng tokenizer local đã chuẩn bị; các nhóm có phần mock. Xem [báo cáo xuất bản](docs/PUBLICATION_CHECKS.md).
 
 Kết quả này không phải tuyên bố đã cài mới toàn bộ runtime/model hoặc nghiệm thu UI/mic trên mọi máy. Xem [phạm vi kiểm thử](docs/TESTING.md), [phát triển](docs/DEVELOPMENT.md) và [kiến trúc](docs/ARCHITECTURE.md).
+
+Các PR và push vào main tự chạy [CI trên Windows](https://github.com/blueDstar/D-Assistant-Desktop/actions/workflows/ci.yml). Badge ở đầu README phản ánh trạng thái workflow thật, không phải GitHub Achievement cá nhân. Đọc [hướng dẫn đóng góp](CONTRIBUTING.md) trước khi mở PR.
 
 ```text
 backend/           FastAPI, SQLite, tools, voice, tutoring, tests

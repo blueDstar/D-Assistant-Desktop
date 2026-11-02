@@ -1,0 +1,25 @@
+name: Báo lỗi
+description: Mô tả một lỗi có thể tái hiện, không đính kèm dữ liệu riêng.
+body:
+  - type: markdown
+    attributes:
+      value: Không đăng CV, hội thoại, email, token, database hoặc log chưa loại thông tin cá nhân. Lỗi bảo mật có thông tin khai thác nhạy cảm cần báo riêng cho chủ repository.
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Các bước tái hiện và kết quả thực tế
+      description: Dùng dữ liệu demo. Nêu điều bạn mong đợi và điều đã xảy ra.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Môi trường
+      description: Phiên bản/commit, Windows, CPU/RAM, tag model và bước setup đã chạy. Bỏ tên máy và đường dẫn tài khoản cá nhân.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Bằng chứng đã loại thông tin riêng
+      description: Lỗi rút gọn, ảnh dùng dữ liệu demo hoặc test thất bại; phân biệt mic/model thật với mock.

@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  frontend-desktop:
+    name: Frontend and desktop logic
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24.22.1'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install locked frontend dependencies
+        run: npm --prefix frontend ci --ignore-scripts --no-audit --no-fund
+      - name: Typecheck and build
+        run: npm --prefix frontend run build
+      - name: Test frontend
+        run: node --experimental-strip-types --test frontend/tests/*.test.cjs frontend/tests/*.test.ts
+      - name: Test desktop logic without Electron or a display
+        run: node --test desktop/tests/*.test.cjs
+
+  backend:
+    name: Backend regression
+    runs-on: windows-latest
+    timeout-minutes: 20
+    env:
+      PYTHONUTF8: '1'
+      UV_PROJECT_ENVIRONMENT: ${{ github.workspace }}/.venv
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: '0.13.5'
+          enable-cache: true
+          cache-dependency-glob: backend/uv.lock
+      - name: Prepare managed Python (security releases lack python.org installers)
+        run: uv python install 3.12.15
+      - name: Install locked Python dependencies including voice test dependencies
+        run: uv sync --python 3.12.15 --project backend --locked --all-groups
+      - name: Prepare pinned tokenizers only (no LLM weights)
+        run: .\.venv\Scripts\python.exe -X utf8 scripts/prepare_test_tokenizer.py
+      - name: Test backend with isolated fixture databases and mocked inference
+        working-directory: backend
+        run: ..\.venv\Scripts\python.exe -X utf8 -m pytest -q

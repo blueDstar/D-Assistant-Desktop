@@ -1,5 +1,7 @@
 # Phát triển
 
+Repository có CI Windows cho backend, frontend build/tests và desktop logic. Workflow không dùng secrets, chỉ đọc repository; không tải weights LLM. Badge README trỏ tới kết quả chạy thực tế. Xem [CONTRIBUTING.md](../CONTRIBUTING.md) để gửi PR.
+
 Chạy setup trước. Dùng runtime portable thay vì thay PATH toàn máy:
 
 ```powershell
