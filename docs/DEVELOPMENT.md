@@ -8,6 +8,7 @@ Chạy setup trước. Dùng runtime portable thay vì thay PATH toàn máy:
 $env:PATH = "$PWD\.runtime\node;$env:PATH"
 .\.runtime\node\npm.cmd --prefix frontend run typecheck
 .\.runtime\node\npm.cmd --prefix frontend run build
+.\.runtime\node\node.exe scripts/check_ui_bundle.cjs
 .\.runtime\node\node.exe --experimental-strip-types --test frontend/tests/*.test.cjs frontend/tests/*.test.ts
 .\.runtime\node\npm.cmd --prefix desktop test
 .\.venv\Scripts\python.exe -X utf8 .\scripts\prepare_test_tokenizer.py
