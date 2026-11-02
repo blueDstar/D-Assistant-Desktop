@@ -31,6 +31,8 @@ jobs:
         run: npm --prefix frontend ci --ignore-scripts --no-audit --no-fund
       - name: Typecheck and build
         run: npm --prefix frontend run build
+      - name: Guard initial JavaScript size including eager imports
+        run: node scripts/check_ui_bundle.cjs
       - name: Test frontend
         run: node --experimental-strip-types --test frontend/tests/*.test.cjs frontend/tests/*.test.ts
       - name: Test desktop logic without Electron or a display

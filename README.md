@@ -111,6 +111,8 @@ Kết quả này không phải tuyên bố đã cài mới toàn bộ runtime/mo
 
 Các PR và push vào main tự chạy [CI trên Windows](https://github.com/blueDstar/D-Assistant-Desktop/actions/workflows/ci.yml). Badge ở đầu README phản ánh trạng thái workflow thật, không phải GitHub Achievement cá nhân. Đọc [hướng dẫn đóng góp](CONTRIBUTING.md) trước khi mở PR.
 
+Giao diện hiện tải các tab và Markdown/math theo nhu cầu. Initial JavaScript giảm từ khoảng 798 xuống 271 kB trong phép build local; CI giữ ngân sách 350 KiB. Đây là giảm payload giao diện, chưa phải đo tăng tốc model hoặc thời gian mở app. Xem [phạm vi đo và cách kiểm tra](docs/UI_PERFORMANCE.md).
+
 ```text
 backend/           FastAPI, SQLite, tools, voice, tutoring, tests
 frontend/          React + TypeScript, chat và các studio
