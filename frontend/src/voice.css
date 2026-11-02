@@ -1,0 +1,16 @@
+.voice-bar{border:1px solid var(--brand-line);padding:10px 14px;margin-bottom:10px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;border-radius:6px}
+.voice-bar.active{border-color:#aaa;background:#191919}
+.voice-bar>div:first-child{flex:1;min-width:170px}
+.voice-bar strong{font-weight:500;font-size:12px}
+.voice-bar small{display:block;color:var(--brand-muted);font-size:11px}
+.voice-bar button{font-size:12px;padding:6px 10px}
+.voice-bar meter{width:65px;height:12px}
+.voice-barge{font-size:11px;color:var(--brand-muted);width:100%}
+.streaming-text{white-space:pre-wrap;overflow-wrap:anywhere}
+.workspace-page{padding:40px clamp(20px,5vw,70px);overflow:auto;flex:1;min-height:0}
+.workspace-page .page-heading{max-width:760px;margin-bottom:24px}
+.workspace-page .panel{max-width:900px;margin:20px 0}
+.workspace-page .field{display:flex;flex-direction:column;align-items:stretch;margin-top:16px}
+.chat-options{flex-wrap:wrap}
+.chat-options>select{max-width:100%}
+@media(max-width:760px){.voice-bar{gap:8px;padding:8px 10px}.voice-bar .row-actions{margin:0}.voice-bar small{font-size:10px}.composer-wrap{padding-top:8px}.workspace-page{padding:24px 18px}.chat-options{gap:7px}}

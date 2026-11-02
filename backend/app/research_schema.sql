@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS sources(id TEXT PRIMARY KEY,project_id TEXT NOT NULL REFERENCES projects(id) ON DELETE CASCADE,filename TEXT NOT NULL,path TEXT NOT NULL,hash TEXT NOT NULL,version INTEGER NOT NULL DEFAULT 1,status TEXT NOT NULL,error TEXT,method TEXT,created_at TEXT NOT NULL);
+CREATE INDEX IF NOT EXISTS ix_sources_scope ON sources(project_id,status);
+CREATE TABLE IF NOT EXISTS chunks(id TEXT PRIMARY KEY,source_id TEXT NOT NULL REFERENCES sources(id) ON DELETE CASCADE,project_id TEXT NOT NULL REFERENCES projects(id) ON DELETE CASCADE,ordinal INTEGER NOT NULL,content TEXT NOT NULL,location TEXT NOT NULL);
+CREATE INDEX IF NOT EXISTS ix_chunks_scope ON chunks(project_id,source_id);
+CREATE TABLE IF NOT EXISTS memories(id TEXT PRIMARY KEY,project_id TEXT REFERENCES projects(id) ON DELETE CASCADE,kind TEXT NOT NULL,content TEXT NOT NULL,status TEXT NOT NULL,version INTEGER NOT NULL DEFAULT 1,supersedes TEXT,source_message_id TEXT REFERENCES messages(id) ON DELETE SET NULL,source_label TEXT NOT NULL,created_at TEXT NOT NULL,updated_at TEXT NOT NULL);
+CREATE INDEX IF NOT EXISTS ix_memories_scope ON memories(project_id,status,kind);
+CREATE TABLE IF NOT EXISTS notes(id TEXT PRIMARY KEY,project_id TEXT NOT NULL REFERENCES projects(id) ON DELETE CASCADE,title TEXT NOT NULL,content TEXT NOT NULL,version INTEGER NOT NULL DEFAULT 1,operation_id TEXT UNIQUE NOT NULL,created_at TEXT NOT NULL,updated_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS note_versions(id TEXT PRIMARY KEY,note_id TEXT NOT NULL REFERENCES notes(id) ON DELETE CASCADE,version INTEGER NOT NULL,content TEXT NOT NULL,created_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS jobs(id TEXT PRIMARY KEY,kind TEXT NOT NULL,project_id TEXT REFERENCES projects(id) ON DELETE CASCADE,status TEXT NOT NULL,target_id TEXT,error TEXT,result TEXT,created_at TEXT NOT NULL,updated_at TEXT NOT NULL);
+CREATE INDEX IF NOT EXISTS ix_jobs_status ON jobs(status,created_at);
+CREATE TABLE IF NOT EXISTS tool_audit(id TEXT PRIMARY KEY,tool TEXT NOT NULL,project_id TEXT,result_status TEXT NOT NULL,operation_id TEXT,created_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS operations(id TEXT PRIMARY KEY,tool TEXT NOT NULL,input_hash TEXT NOT NULL,result TEXT NOT NULL,created_at TEXT NOT NULL);
+INSERT OR IGNORE INTO migrations VALUES(2,strftime('%Y-%m-%dT%H:%M:%fZ','now'));

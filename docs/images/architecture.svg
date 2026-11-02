@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="650" viewBox="0 0 1280 650" role="img" aria-labelledby="title desc">
+  <title id="title">Kiến trúc local của D-bot</title>
+  <desc id="desc">Desktop và VS Code gọi FastAPI qua loopback. Backend dùng Ollama, SQLite, tệp local và engine voice. Internet cần khi chuẩn bị tài sản; Gmail và Calendar cần tích hợp riêng.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0l10 5L0 10" fill="#858585"/></marker></defs>
+  <rect width="1280" height="650" rx="20" fill="#0b0b0b"/>
+  <g font-family="Arial, Segoe UI, sans-serif">
+    <text x="48" y="57" fill="#a5a5a5" font-size="14" letter-spacing="3">LOCAL BY DESIGN</text><text x="48" y="101" fill="#f3f0e9" font-size="30">Một không gian làm việc trên máy của bạn.</text>
+    <rect x="30" y="135" width="1220" height="405" rx="14" fill="none" stroke="#484848" stroke-dasharray="7 7"/>
+    <text x="52" y="166" fill="#858585" font-size="13">WINDOWS / LOOPBACK</text>
+    <g fill="#141414" stroke="#484848"><rect x="60" y="208" width="245" height="110" rx="10"/><rect x="60" y="350" width="245" height="90" rx="10"/><rect x="430" y="252" width="310" height="140" rx="12"/><rect x="868" y="185" width="340" height="90" rx="10"/><rect x="868" y="300" width="340" height="90" rx="10"/><rect x="868" y="415" width="340" height="90" rx="10"/></g>
+    <g fill="none" stroke="#858585" stroke-width="2" marker-end="url(#arrow)"><path d="M305 262h67v45h58"/><path d="M305 395h67v-58h58"/><path d="M740 295h65v-65h63"/><path d="M740 322h65v23h63"/><path d="M740 350h65v110h63"/></g>
+    <g fill="#f3f0e9" font-size="20"><text x="81" y="246">Desktop + React</text><text x="81" y="386">VS Code extension</text><text x="455" y="292">FastAPI backend</text><text x="892" y="223">Ollama · Qwen3.5</text><text x="892" y="338">SQLite + tệp local</text><text x="892" y="453">STT / TTS workers</text></g>
+    <g fill="#a5a5a5" font-size="14"><text x="81" y="276">Chat · robot · voice controls</text><text x="81" y="299">Ctrl+Alt+D / tray</text><text x="81" y="412">Đọc file · review diff</text><text x="455" y="323">127.0.0.1:8008</text><text x="455" y="352">Routing · nguồn · quyền công cụ</text><text x="455" y="376">Lịch sử / bộ nhớ theo dự án</text><text x="892" y="250">127.0.0.1:11434 · streaming</text><text x="892" y="365">Chat · nguồn · memory · ledger</text><text x="892" y="480">Whisper · Piper · Kokoro</text></g>
+    <text x="48" y="582" fill="#b9b7b2" font-size="16">Internet: tải runtime/model lần đầu và mở liên kết theo yêu cầu.</text>
+    <text x="48" y="613" fill="#858585" font-size="14">Gmail/Calendar cần tích hợp riêng · Không có watcher liên tục · Chưa kiểm thử ngắt Internet thật</text>
+  </g>
+</svg>

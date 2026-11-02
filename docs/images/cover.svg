@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="480" viewBox="0 0 1280 480" role="img" aria-labelledby="title desc">
+  <title id="title">D-bot Assistant Desktop</title>
+  <desc id="desc">Trợ lý AI local trên Windows: trò chuyện, dự án, lập trình, giọng nói và học Anh–Nhật.</desc>
+  <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity=".035"/></pattern></defs>
+  <rect width="1280" height="480" rx="24" fill="#0b0b0b"/>
+  <rect width="1280" height="480" rx="24" fill="url(#grid)"/>
+  <g font-family="Arial, Segoe UI, sans-serif">
+    <text x="64" y="70" fill="#b9b7b2" font-size="15" letter-spacing="4">BLUEDSTAR / PERSONAL AI</text>
+    <text x="60" y="190" fill="#f3f0e9" font-size="100" font-weight="700" letter-spacing="-5">D-bot.</text>
+    <text x="64" y="249" fill="#f3f0e9" font-size="30">Trợ lý của bạn. Trên máy của bạn.</text>
+    <text x="64" y="290" fill="#a5a5a5" font-size="20">Từ câu hỏi → ngữ cảnh → hành động có kiểm soát.</text>
+    <g fill="#141414" stroke="#3c3c3c"><rect x="64" y="341" width="124" height="38" rx="19"/><rect x="200" y="341" width="158" height="38" rx="19"/><rect x="370" y="341" width="134" height="38" rx="19"/></g>
+    <g fill="#f3f0e9" font-size="14" text-anchor="middle"><text x="126" y="366">LOCAL LLM</text><text x="279" y="366">VOICE + PROJECTS</text><text x="437" y="366">WINDOWS</text></g>
+    <text x="64" y="435" fill="#858585" font-size="13">DESKTOP 0.6.2 · SOURCE REPOSITORY · ĐANG PHÁT TRIỂN</text>
+    <circle cx="1040" cy="224" r="156" fill="#141414" stroke="#303030"/>
+    <path d="M1040 77v-20" stroke="#b9b7b2" stroke-width="5"/><circle cx="1040" cy="51" r="8" fill="#f3f0e9"/>
+    <rect x="921" y="118" width="238" height="192" rx="55" fill="#f3f0e9"/>
+    <rect x="938" y="137" width="204" height="143" rx="39" fill="#141414"/>
+    <rect x="973" y="175" width="25" height="46" rx="12" fill="#f3f0e9"/><rect x="1082" y="175" width="25" height="46" rx="12" fill="#f3f0e9"/>
+    <path d="M1018 246q22 17 44 0" fill="none" stroke="#b9b7b2" stroke-width="5" stroke-linecap="round"/>
+    <rect x="985" y="328" width="40" height="17" rx="8" fill="#b9b7b2"/><rect x="1055" y="328" width="40" height="17" rx="8" fill="#b9b7b2"/>
+    <text x="1040" y="415" fill="#a5a5a5" font-size="14" text-anchor="middle">OBSERVE / QUESTION / BUILD / REFINE</text>
+  </g>
+</svg>

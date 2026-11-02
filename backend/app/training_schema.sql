@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS feedback(id TEXT PRIMARY KEY,message_id TEXT REFERENCES messages(id) ON DELETE CASCADE,project_id TEXT NOT NULL REFERENCES projects(id) ON DELETE CASCADE,rating TEXT NOT NULL,reason TEXT NOT NULL,correction TEXT NOT NULL,status TEXT NOT NULL,created_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS approved_examples(id TEXT PRIMARY KEY,feedback_id TEXT REFERENCES feedback(id) ON DELETE CASCADE,project_id TEXT NOT NULL REFERENCES projects(id) ON DELETE CASCADE,conversation_id TEXT REFERENCES conversations(id) ON DELETE CASCADE,message_id TEXT REFERENCES messages(id) ON DELETE CASCADE,question TEXT NOT NULL,answer TEXT NOT NULL,context TEXT NOT NULL DEFAULT '',status TEXT NOT NULL,reviewed INTEGER NOT NULL DEFAULT 0,self_contained INTEGER NOT NULL DEFAULT 0,family TEXT NOT NULL,created_at TEXT NOT NULL,updated_at TEXT NOT NULL);
+CREATE INDEX IF NOT EXISTS ix_examples_scope ON approved_examples(project_id,status);
+CREATE TABLE IF NOT EXISTS training_exports(id TEXT PRIMARY KEY,manifest TEXT NOT NULL,path TEXT NOT NULL,created_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS evaluations(id TEXT PRIMARY KEY,model TEXT NOT NULL,config TEXT NOT NULL,status TEXT NOT NULL,results TEXT NOT NULL,created_at TEXT NOT NULL,updated_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS model_versions(id TEXT PRIMARY KEY,model TEXT NOT NULL,digest TEXT NOT NULL,capabilities TEXT NOT NULL,created_at TEXT NOT NULL);
+INSERT OR IGNORE INTO migrations VALUES(3,strftime('%Y-%m-%dT%H:%M:%fZ','now'));

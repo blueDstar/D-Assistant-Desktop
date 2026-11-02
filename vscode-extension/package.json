@@ -1,0 +1,34 @@
+{
+  "name":"d-bot-assistant",
+  "displayName":"D-bot Assistant",
+  "description":"Trợ lý lập trình local: đọc Markdown/code, đề xuất diff, tạo project và khôi phục thay đổi.",
+  "version":"0.2.0",
+  "publisher":"bluedstar-local",
+  "license":"UNLICENSED",
+  "engines":{"vscode":"^1.95.0"},
+  "categories":["Other"],
+  "main":"./dist/extension.js",
+  "extensionKind":["ui"],
+  "capabilities":{"untrustedWorkspaces":{"supported":false,"description":"D-bot chỉ thao tác file và task trong workspace bạn tin cậy."},"virtualWorkspaces":{"supported":false}},
+  "activationEvents":["onView:dbot.assistant","onCommand:dbot.open","onCommand:dbot.editFile","onCommand:dbot.explainSelection","onCommand:dbot.newProject","onCommand:dbot.readMarkdown","onCommand:dbot.runTask"],
+  "contributes":{
+    "commands":[
+      {"command":"dbot.open","title":"D-bot: Mở trợ lý lập trình"},
+      {"command":"dbot.editFile","title":"D-bot: Sửa file đang mở"},
+      {"command":"dbot.explainSelection","title":"D-bot: Giải thích vùng chọn / file"},
+      {"command":"dbot.readMarkdown","title":"D-bot: Đọc file Markdown"},
+      {"command":"dbot.newProject","title":"D-bot: Tạo project mới"},
+      {"command":"dbot.runTask","title":"D-bot: Chạy task VS Code đã chọn"}
+    ],
+    "viewsContainers":{"activitybar":[{"id":"dbot-container","title":"D-bot","icon":"media/dbot.svg"}]},
+    "views":{"dbot-container":[{"type":"webview","id":"dbot.assistant","name":"Trợ lý lập trình"}]},
+    "menus":{"editor/context":[{"command":"dbot.explainSelection","when":"resourceScheme == file && isWorkspaceTrusted","group":"dbot@1"},{"command":"dbot.editFile","when":"resourceScheme == file && isWorkspaceTrusted","group":"dbot@2"}]},
+    "configuration":{"title":"D-bot","properties":{
+      "dbot.endpoint":{"type":"string","default":"http://127.0.0.1:8008","scope":"application","description":"Backend D-bot loopback. Chỉ HTTP localhost/127.0.0.1/[::1], không URL ngoài máy."},
+      "dbot.model":{"type":"string","default":"qwen3:4b-instruct","scope":"application","description":"Tag model local đã tải trong Ollama."}
+    }}
+  },
+  "scripts":{"build":"tsc -p .","test":"npm run build && node --test tests/*.test.cjs","package":"npm run build && vsce package --no-dependencies --allow-missing-repository --out ../artifacts/d-bot-assistant-0.2.0.vsix"},
+  "devDependencies":{"@types/node":"22.10.0","@types/vscode":"1.95.0","@vscode/vsce":"4.0.0","typescript":"5.9.3"},
+  "overrides":{"@azure/msal-node":"7.1.0"}
+}

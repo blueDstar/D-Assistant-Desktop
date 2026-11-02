@@ -1,0 +1,6 @@
+UNLICENSED
+
+This package is prepared for private local use with the owner's D-bot workspace.
+No public redistribution license is specified. It is not published to the Visual Studio Marketplace.
+
+Third-party development tools and their authentication libraries are not bundled in the VSIX.

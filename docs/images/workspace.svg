@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="768" viewBox="0 0 1280 768" role="img" aria-labelledby="title desc">
+  <title id="title">Minh họa không gian làm việc D-bot</title>
+  <desc id="desc">Cột trái ưu tiên hội thoại và dự án. Vùng chat ở giữa, ô nhập có chế độ model và điều khiển giọng nói. Dữ liệu demo, không phải screenshot.</desc>
+  <rect width="1280" height="768" rx="20" fill="#eeeae4"/>
+  <g font-family="Arial, Segoe UI, sans-serif">
+    <text x="36" y="45" fill="#333" font-size="14" letter-spacing="2">WORKSPACE / MINH HỌA BỐ CỤC · DỮ LIỆU DEMO</text>
+    <rect x="28" y="70" width="1224" height="625" rx="12" fill="#0b0b0b" stroke="#303030"/>
+    <path d="M28 110h1224M302 110v585" stroke="#303030"/>
+    <circle cx="50" cy="90" r="4" fill="#777"/><circle cx="65" cy="90" r="4" fill="#777"/><circle cx="80" cy="90" r="4" fill="#777"/>
+    <text x="640" y="95" text-anchor="middle" fill="#b9b7b2" font-size="13">D-bot Assistant</text>
+    <text x="52" y="155" fill="#f3f0e9" font-size="26" font-weight="700">D-bot.</text>
+    <rect x="50" y="181" width="230" height="39" rx="5" fill="#f3f0e9"/><text x="165" y="206" text-anchor="middle" fill="#111" font-size="14">+ Cuộc trò chuyện mới</text>
+    <rect x="50" y="233" width="230" height="35" rx="5" fill="#141414" stroke="#303030"/><text x="64" y="256" fill="#b9b7b2" font-size="13">Dự án · Robot demo</text>
+    <text x="52" y="305" fill="#a5a5a5" font-size="12" letter-spacing="1">CÁC CUỘC TRÒ CHUYỆN</text>
+    <rect x="43" y="320" width="244" height="42" rx="5" fill="#242424"/><text x="57" y="346" fill="#f3f0e9" font-size="14">Kế hoạch thử nghiệm robot</text>
+    <text x="57" y="393" fill="#b9b7b2" font-size="14">Đọc README của project</text>
+    <text x="57" y="438" fill="#b9b7b2" font-size="14">Luyện viết tiếng Anh</text>
+    <text x="57" y="483" fill="#b9b7b2" font-size="14">Tóm tắt tài liệu kỹ thuật</text>
+    <path d="M50 572h230" stroke="#303030"/><text x="57" y="604" fill="#a5a5a5" font-size="14">› Chức năng (thu gọn)</text><text x="57" y="666" fill="#777" font-size="12">Lịch sử có vùng cuộn riêng</text>
+    <text x="344" y="154" fill="#f3f0e9" font-size="19">Kế hoạch thử nghiệm robot</text><text x="344" y="179" fill="#777" font-size="12">DỰ ÁN / ROBOT DEMO</text>
+    <path d="M344 201h862" stroke="#303030"/>
+    <text x="365" y="247" fill="#a5a5a5" font-size="12" letter-spacing="2">BẠN</text>
+    <text x="365" y="280" fill="#f3f0e9" font-size="18">Giúp tôi lập kế hoạch thử nghiệm một robot nhỏ.</text>
+    <text x="365" y="339" fill="#a5a5a5" font-size="12" letter-spacing="2">D-BOT</text>
+    <text x="365" y="374" fill="#f3f0e9" font-size="19">Bắt đầu từ mục tiêu và phép đo.</text>
+    <g fill="#b9b7b2" font-size="16"><text x="365" y="410">1. Xác định nhiệm vụ robot cần hoàn thành.</text><text x="365" y="443">2. Chọn baseline, biến thử và điều kiện đo.</text><text x="365" y="476">3. Ghi kết quả, sai số và giới hạn của phép thử.</text></g>
+    <rect x="343" y="544" width="865" height="123" rx="10" fill="#141414" stroke="#484848"/>
+    <text x="363" y="577" fill="#858585" font-size="16">Hỏi tiếp, chọn nguồn hoặc bắt đầu nói…</text>
+    <rect x="362" y="612" width="117" height="31" rx="5" fill="#242424"/><text x="420" y="633" fill="#b9b7b2" text-anchor="middle" font-size="13">Tự động ▾</text>
+    <rect x="492" y="612" width="143" height="31" rx="5" fill="#242424"/><text x="563" y="633" fill="#b9b7b2" text-anchor="middle" font-size="13">Bắt đầu nói</text>
+    <rect x="1139" y="607" width="46" height="41" rx="7" fill="#f3f0e9"/><text x="1162" y="634" text-anchor="middle" fill="#111" font-size="21">↑</text>
+    <text x="36" y="736" fill="#555" font-size="14">Hội thoại ở bên trái · Chức năng có thể thu gọn · Ngữ cảnh theo dự án</text>
+    <text x="1244" y="736" fill="#777" font-size="12" text-anchor="end">ILLUSTRATION / NOT A SCREENSHOT</text>
+  </g>
+</svg>

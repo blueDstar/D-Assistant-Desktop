@@ -1,0 +1,5 @@
+No project-wide redistribution license has been granted.
+
+This repository publishes the D-bot source for inspection. Public visibility alone does not grant an open-source license. The owner may choose a license later.
+
+Third-party dependencies, model weights, voices and branding retain their own licenses and notices. See docs/THIRD_PARTY_NOTICES.md.
